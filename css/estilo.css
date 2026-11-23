@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap');
+
+:root {
+    --bg-pagina: #f4efe6;
+    --bg-superficie: #fbf8f3;
+    --bg-lateral: #2b2118;
+    --texto-principal: #231b15;
+    --texto-suave: #66584c;
+    --texto-lateral: #f4efe6;
+    --destaque: #b85d19;
+    --destaque-hover: #8f440d;
+    --linha: #d5c9b8;
+}
+
+body.dark-mode {
+    --bg-pagina: #141210;
+    --bg-superficie: #1d1a17;
+    --bg-lateral: #0d0c0a;
+    --texto-principal: #ede6dc;
+    --texto-suave: #a69b8d;
+    --texto-lateral: #ede6dc;
+    --destaque: #e08a3c;
+    --destaque-hover: #f2a359;
+    --linha: #332d27;
+}
+
+* {
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--bg-pagina);
+    color: var(--texto-principal);
+    line-height: 1.6;
+}
+
+.layout-editorial {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Barra Lateral */
+.barra-lateral {
+    width: 320px;
+    background-color: var(--bg-lateral);
+    color: var(--texto-lateral);
+    padding: 45px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border-right: 1px solid var(--linha);
+}
+
+.etiqueta-local {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--destaque);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+#titulo-principal {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    line-height: 1.05;
+    margin: 0 0 16px 0;
+    font-weight: 800;
+}
+
+.subtitulo {
+    font-size: 0.92rem;
+    color: #bfb5a8;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+nav li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+nav a {
+    display: block;
+    padding: 14px 0;
+    color: var(--texto-lateral);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+nav a:hover, nav a.ativo {
+    color: var(--destaque);
+    padding-left: 8px;
+    font-weight: 700;
+}
+
+.rodape-lateral {
+    font-size: 0.8rem;
+    color: #9c9184;
+}
+
+.rodape-lateral p { margin: 0 0 6px 0; }
+.rodape-lateral a { color: var(--destaque); text-decoration: none; font-weight: 700; }
+
+/* Conteúdo Principal e Controlo de Vistas */
+.conteudo-principal {
+    margin-left: 320px;
+    flex: 1;
+    padding: 50px 60px;
+    max-width: 1200px;
+}
+
+.vista-pagina {
+    display: none;
+}
+
+.vista-pagina.ativa {
+    display: block;
+    animation: aparecer 0.35s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.bloco-editorial {
+    background-color: var(--bg-superficie);
+    border: 1px solid var(--linha);
+    padding: 35px;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.bloco-editorial::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border: 1px solid var(--linha);
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.cabecalho-seccao {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    border-bottom: 2px solid var(--texto-principal);
+    padding-bottom: 15px;
+    margin-bottom: 28px;
+}
+
+.numero-seccao {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--destaque);
+    font-weight: 600;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 800;
+}
+
+.cabecalho-seccao p {
+    margin: 5px 0 0 0;
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+/* Grelha de Produtos */
+.lista-produtos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.lista-produtos .item-destaque {
+    grid-column: span 2;
+}
+
+.cartao-produto {
+    border: 1px solid var(--linha);
+    background-color: var(--bg-pagina);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-destaque .cartao-produto {
+    flex-direction: row;
+    align-items: center;
+}
+
+.cartao-produto img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.item-destaque .cartao-produto img {
+    width: 55%;
+    height: 270px;
+}
+
+.info-produto {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.tag-produto {
+    align-self: flex-start;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background-color: var(--destaque);
+    color: #ffffff;
+    padding: 3px 8px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.cartao-produto h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    margin: 0 0 8px 0;
+}
+
+.cartao-produto p {
+    margin: 0 0 14px 0;
+    font-size: 0.92rem;
+    color: var(--texto-suave);
+}
+
+.preco-produto {
+    margin-top: auto;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--destaque);
+}
+
+.acao-central {
+    margin-top: 28px;
+    text-align: right;
+    position: relative;
+    z-index: 2;
+}
+
+.botao-destaque {
+    background-color: var(--destaque);
+    border-color: var(--destaque);
+    color: #ffffff;
+    padding: 12px 22px;
+}
+
+.botao-destaque:hover {
+    background-color: var(--destaque-hover);
+}
+
+/* Filtros */
+.filtros-categoria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-filtro.ativo {
+    background-color: var(--destaque);
+    border-color: var(--destaque);
+    color: #ffffff;
+}
+
+/* Grelha Inferior */
+.grelha-inferior {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 35px;
+}
+
+.grelha-inferior .bloco-editorial { margin-bottom: 0; }
+
+/* Tabela */
+.tabela-horario {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-horario th {
+    text-align: left;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--texto-suave);
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--texto-principal);
+}
+
+.tabela-horario td {
+    padding: 14px 8px;
+    border-bottom: 1px dashed var(--linha);
+    font-weight: 500;
+}
+
+.tabela-horario td:not(:first-child),
+.tabela-horario th:not(:first-child) {
+    text-align: right;
+}
+
+/* Formulário */
+.formulario-editorial {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    z-index: 2;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-form label {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.campo-form input,
+.campo-form select,
+.campo-form textarea {
+    padding: 12px;
+    border: 1px solid var(--linha);
+    background-color: var(--bg-pagina);
+    color: var(--texto-principal);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+}
+
+.caixa-sucesso {
+    margin-top: 20px;
+    padding: 18px;
+    border: 1px solid var(--destaque);
+    background-color: var(--bg-pagina);
+    font-weight: 500;
+}
+
+/* Botões */
+.painel-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+    position: relative;
+    z-index: 2;
+}
+
+button {
+    background-color: transparent;
+    color: var(--texto-principal);
+    border: 1px solid var(--texto-principal);
+    padding: 10px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--destaque);
+    border-color: var(--destaque);
+    color: #ffffff;
+}
+
+/* Responsividade */
+@media (max-width: 960px) {
+    .layout-editorial { flex-direction: column; }
+    .barra-lateral { position: static; width: 100%; padding: 30px 25px; }
+    nav ul { display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0; border: none; }
+    nav li { border: none; }
+    .conteudo-principal { margin-left: 0; padding: 25px 20px; }
+    .item-destaque .cartao-produto { flex-direction: column; }
+    .item-destaque .cartao-produto img { width: 100%; height: 210px; }
+    .lista-produtos, .grelha-inferior { grid-template-columns: 1fr; }
+    .lista-produtos .item-destaque { grid-column: span 1; }
+}
