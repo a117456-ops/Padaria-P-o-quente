@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padaria Pão Quente - Gondomar</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <div class="layout-editorial">
+
+        <!-- Menu Lateral -->
+        <header class="barra-lateral">
+            <div class="marca">
+                <span class="etiqueta-local">Gondomar • Past. Artesanal</span>
+                <h1 id="titulo-principal">Padaria<br>Pão Quente</h1>
+                <p class="subtitulo">Fornadas diárias de fermentação lenta e doçaria tradicional.</p>
+            </div>
+            
+            <!-- Navegação entre vistas internas (sem sair do ficheiro) -->
+            <nav>
+                <ul>
+                    <li><a href="#" class="link-vista ativo" data-vista="vista-inicio">01. Início & História</a></li>
+                    <li><a href="#" class="link-vista" data-vista="vista-produtos">02. Catálogo Completo (8)</a></li>
+                    <li><a href="#" class="link-vista" data-vista="vista-encomendas">03. Encomendas & Local</a></li>
+                </ul>
+            </nav>
+
+            <div class="rodape-lateral">
+                <p>&copy; 2026 Padaria Pão Quente</p>
+                <a href="https://cm-gondomar.pt" target="_blank" rel="noopener">Município de Gondomar &rarr;</a>
+            </div>
+        </header>
+
+        <!-- Conteúdo Principal -->
+        <main class="conteudo-principal">
+
+            <!-- ==========================================
+                 VISTA 1: INÍCIO, DESTAQUES, HORÁRIO E SOBRE
+                 ========================================== -->
+            <div id="vista-inicio" class="vista-pagina ativa">
+                
+                <section id="produtos" class="bloco-editorial">
+                    <div class="cabecalho-seccao">
+                        <span class="numero-seccao">01</span>
+                        <div>
+                            <h2>Fornadas em Destaque</h2>
+                            <p>Uma amostra das nossas especialidades feitas todas as madrugadas em Gondomar.</p>
+                        </div>
+                    </div>
+                    
+                    <ul class="lista-produtos">
+                        <li class="item-destaque">
+                            <div class="cartao-produto">
+                                <img src="https://i.pinimg.com/736x/d0/0e/17/d00e1754d4f7a14e425596d4ae2a1ae7.jpg" alt="Pão rústico artesanal">
+                                <div class="info-produto">
+                                    <span class="tag-produto">Especialidade da Casa</span>
+                                    <h3>Pão Tradicional de Massa Fofa</h3>
+                                    <p>Pão estaladiço por fora e macio por dentro, fermentado durante 24 horas.</p>
+                                    <span class="preco-produto">2,20 € / unid.</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="cartao-produto">
+                                <img src="https://images.pexels.com/photos/2135/food-france-morning-breakfast.jpg?auto=compress&cs=tinysrgb&w=600" alt="Croissants folhados dourados">
+                                <div class="info-produto">
+                                    <h3>Croissants Folhados</h3>
+                                    <p>Manteiga de alta qualidade e massa folhada estaladiça.</p>
+                                    <span class="preco-produto">1,35 € / unid.</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="cartao-produto">
+                                <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pastelaria tradicional portuguesa">
+                                <div class="info-produto">
+                                    <h3>Pastelaria Variada</h3>
+                                    <p>Doces tradicionais portugueses confecionados todas as manhãs.</p>
+                                    <span class="preco-produto">Desde 1,20 €</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="acao-central">
+                        <button type="button" class="link-vista botao-destaque" data-vista="vista-produtos">Ver todos os 8 produtos do catálogo &rarr;</button>
+                    </div>
+                </section>
+
+                <div class="grelha-inferior">
+                    <section id="horario" class="bloco-editorial">
+                        <div class="cabecalho-seccao">
+                            <span class="numero-seccao">02</span>
+                            <h2>Horário</h2>
+                        </div>
+                        <table class="tabela-horario">
+                            <thead>
+                                <tr>
+                                    <th>Dias</th>
+                                    <th>Abertura</th>
+                                    <th>Fecho</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Segunda a Sexta</td>
+                                    <td>07:45</td>
+                                    <td>18:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Sábados</td>
+                                    <td>10:00</td>
+                                    <td>20:15</td>
+                                </tr>
+                                <tr>
+                                    <td>Domingos</td>
+                                    <td>11:45</td>
+                                    <td>17:45</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <aside id="sobre" class="bloco-editorial">
+                        <div class="cabecalho-seccao">
+                            <span class="numero-seccao">03</span>
+                            <h2>Sobre a Padaria</h2>
+                        </div>
+                        <p id="texto-sobre">Fundada em Gondomar, a Padaria Pão Quente dedica-se à arte do sabor artesanal. Mantemos vivas as receitas tradicionais, o forno a lenha e o sabor autêntico português.</p>          
+                        
+                        <div class="painel-botoes">
+                            <button id="btn-mensagem">Mensagem de Boas-Vindas</button>
+                            <button id="btn-sobre">Esconder História</button>
+                            <button class="btn-alternar-tema">Modo Escuro</button>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 VISTA 2: CATÁLOGO COMPLETO COM FILTROS
+                 ========================================== -->
+            <div id="vista-produtos" class="vista-pagina">
+                <section class="bloco-editorial">
+                    <div class="cabecalho-seccao">
+                        <span class="numero-seccao">02</span>
+                        <div>
+                            <h2>Catálogo Completo</h2>
+                            <p>Filtra por categoria para explorares tudo o que sai dos nossos fornos.</p>
+                        </div>
+                    </div>
+
+                    <div class="filtros-categoria">
+                        <button class="btn-filtro ativo" data-categoria="todos">Todos (8)</button>
+                        <button class="btn-filtro" data-categoria="padaria">Padaria</button>
+                        <button class="btn-filtro" data-categoria="pastelaria">Pastelaria</button>
+                        <button class="btn-alternar-tema" style="margin-left: auto;">Modo Escuro</button>
+                    </div>
+
+                    <ul class="lista-produtos grelha-catalogo">
+                        <li data-categoria="padaria">
+                            <div class="cartao-produto">
+                                <img src="https://i.pinimg.com/736x/d0/0e/17/d00e1754d4f7a14e425596d4ae2a1ae7.jpg" alt="Pão Tradicional">
+                                <div class="info-produto">
+                                    <span class="tag-produto">Padaria</span>
+                                    <h3>Pão Tradicional</h3>
+                                    <p>Fermentação lenta de 24h com côdea estaladiça.</p>
+                                    <span class="preco-produto">2,20 €</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li data-categoria="padaria">
+                            <div class="cartao-produto">
+                                <img src="https://i.pinimg.com/736x/f0/18/b1/f018b135bd61b583948659a7e2e4d480.jpg" alt="Broa de Milho">
+                                <div class="info-produto">
+                                    <span class="tag-produto">Padaria</span>
+                                    <h3>Broa de Milho de Avintes</h3>
+                                    <p>Receita tradicional nortenha, densa e aromática.</p>
+                                    <span class="preco-produto">2,80 €</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li data-categoria="padaria">
+                            <div class="cartao-produto">
+                                <img src="https://www.portugalthings.com/wp-content/uploads/2025/03/Receita-de-Regueifa-doce.jpg" alt="Regueifa">
+                                <div class="info-produto">
+                                    <span class="tag-produto">Padaria</span>
+                                    <h3>Regueifa</h3>
+                                    <p>Textura leve e macia.</p>
+                                    <span class="preco-produto">1,85 €</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li data-categoria="pastelaria">
+                            <div class="cartao-produto">
+                                <img src="https://images.pexels.com/photos/2135/food-france-morning-breakfast.jpg?auto=compress&cs=tinysrgb&w=600" alt="Croissants Folhados">
+                                <div class="info-produto">
+                                    <span class="tag-produto">Pastelaria</span>
+                                    <h3>Croissant Folhado</h3>
+                                    <p>Feito com manteiga pura, leve e dourado.</p>
+                                    <span class="preco-produto">1,35 €</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li data-categoria="pastelaria">
+                            <div class="cartao-produto">
+                                <img src="https://ranjaconcerten.nl/wp-content/uploads/2024/04/baked-Pastel-de-Nata.webp" alt="Pastéis de Nata">
+                                <div class="info-produto">
+                                    <span class="tag-produto">Pastelaria</span>
+                                    <h3>Pastel de Nata Quente</h3>
+                                    <p>Massa folhada crocante com creme de ovo e canela.</p>
+                                    <span class="preco-produto">1,20 €</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li data-categoria="pastelaria">
+                            <div class="cartao-produto">
+                                <img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bolo de Chocolate">
+                                <div class="info-produto">
+                                    <span class="tag-produto">Pastelaria</span>
+                                    <h3>Fatia de Bolo Caseiro</h3>
+                                    <p>Receita única da nossa Padaria.</p>
+                                    <span class="preco-produto">1,90 €</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li data-categoria="pastelaria">
+                            <div class="cartao-produto">
+                                <img src="https://www.sobremesasdeportugal.pt/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-24-at-20.17.55.jpeg" alt="Bolo de Chocolate">
+                                <div class="info-produto">
+                                    <span class="tag-produto">Pastelaria</span>
+                                    <h3>Bola de berlim</h3>
+                                    <p>Massa fofa e com cobertura de açúcar</p>
+                                    <span class="preco-produto">2,50 €</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li data-categoria="padaria">
+                            <div class="cartao-produto">
+                                <img src="https://receitasde.com.br/wp-content/uploads/2025/04/Pao-Caseiro-Integral-com-Sementes.jpg" alt="Pão de Sementes">
+                                <div class="info-produto">
+                                    <span class="tag-produto">Padaria</span>
+                                    <h3>Pão Integral com Sementes</h3>
+                                    <p>Um pão super rico em nutrientes.</p>
+                                    <span class="preco-produto">2,50 €</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- ==========================================
+                 VISTA 3: ENCOMENDAS E LOCALIZAÇÃO
+                 ========================================== -->
+            <div id="vista-encomendas" class="vista-pagina">
+                <section class="bloco-editorial">
+                    <div class="cabecalho-seccao">
+                        <span class="numero-seccao">03</span>
+                        <div>
+                            <h2>Fazer Encomenda</h2>
+                            <p>Reserva o teu pão quente ou bolos de aniversário para levantar na loja em Gondomar.</p>
+                        </div>
+                    </div>
+
+                    <form id="form-encomenda" class="formulario-editorial">
+                        <div class="campo-form">
+                            <label for="nome">O teu Nome:</label>
+                            <input type="text" id="nome" required placeholder="Ex: João Silva">
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="telefone">Telemóvel:</label>
+                            <input type="tel" id="telefone" required placeholder="Ex: 912 345 678">
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="produto-escolhido">Produto Principal:</label>
+                            <select id="produto-escolhido">
+                                <option value="Pão Tradicional de Massa Mãe">Pão Tradicional de Massa Mãe (2,20 €)</option>
+                                <option value="Broa de Milho de Avintes">Broa de Milho de Avintes (2,80 €)</option>
+                                <option value="Caixa 6 Pastéis de Nata">Caixa 6 Pastéis de Nata (7,00 €)</option>
+                                <option value="Bolo de Aniversário Personalizado">Bolo de Aniversário Personalizado</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="detalhes">Quantidade e Hora de Levantamento:</label>
+                            <textarea id="detalhes" rows="3" required placeholder="Ex: 2 pães tradicionais e 4 croissants para levantar sábado às 10:30."></textarea>
+                        </div>
+
+                        <div class="painel-botoes">
+                            <button type="submit">Confirmar Encomenda</button>
+                            <button type="button" class="btn-alternar-tema">Modo Escuro</button>
+                        </div>
+                    </form>
+
+                    <div id="confirmacao-encomenda" class="caixa-sucesso" style="display: none;"></div>
+                </section>
+
+                <section class="bloco-editorial">
+                    <div class="cabecalho-seccao">
+                        <span class="numero-seccao">04</span>
+                        <h2>Onde Estamos</h2>
+                    </div>
+                    <p><strong>Morada:</strong> Rua Central de São Cosme, nº 142, 4420-000 Gondomar</p>
+                    <p><strong>Telefone Loja:</strong> +351 912 345 678</p>
+                    <p><strong>Email:</strong> padariapaoquenteoficial.pt</p>
+                </section>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
